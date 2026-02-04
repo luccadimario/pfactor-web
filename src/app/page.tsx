@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function Home() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [showDemo, setShowDemo] = useState(false);
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
@@ -116,6 +117,40 @@ export default function Home() {
                 )}
             </nav>
 
+            {/* Demo Modal */}
+            {showDemo && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+                    <div className="relative w-full max-w-4xl bg-slate-900 rounded-2xl overflow-hidden shadow-2xl">
+                        <button
+                            onClick={() => setShowDemo(false)}
+                            className="absolute top-4 right-4 z-10 p-2 bg-slate-800 hover:bg-slate-700 rounded-full text-white transition-colors"
+                        >
+                            <svg
+                                className="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            </svg>
+                        </button>
+                        <video
+                            className="w-full aspect-video"
+                            controls
+                            autoPlay
+                            src="/demo.mp4"
+                        >
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            )}
+
             {/* Hero Section */}
             <section className="pt-32 pb-20 px-6">
                 <div className="max-w-6xl mx-auto text-center">
@@ -160,7 +195,10 @@ export default function Home() {
                             </svg>
                             App Store
                         </a>
-                        <button className="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl transition-all border border-slate-700">
+                        <button
+                            onClick={() => setShowDemo(true)}
+                            className="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl transition-all border border-slate-700"
+                        >
                             See Demo
                         </button>
                     </div>
@@ -226,12 +264,16 @@ export default function Home() {
                                         Listening...
                                     </p>
                                     <div className="flex items-center gap-1">
-                                        {[...Array(20)].map((_, i) => (
+                                        {[
+                                            30, 17, 20, 24, 22, 26, 14, 22, 28,
+                                            29, 26, 18, 24, 8, 20, 16, 28, 14,
+                                            22, 10,
+                                        ].map((h, i) => (
                                             <div
                                                 key={i}
-                                                className="w-1 bg-emerald-400/60 rounded-full"
+                                                className="w-1 bg-emerald-400/60 rounded-full animate-waveform"
                                                 style={{
-                                                    height: `${Math.random() * 24 + 8}px`,
+                                                    height: `${h}px`,
                                                     animationDelay: `${i * 0.05}s`,
                                                 }}
                                             ></div>
