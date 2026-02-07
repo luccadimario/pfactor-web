@@ -119,11 +119,17 @@ export default function Home() {
 
             {/* Demo Modal */}
             {showDemo && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-                    <div className="relative w-full max-w-4xl bg-slate-900 rounded-2xl overflow-hidden shadow-2xl">
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+                    onClick={() => setShowDemo(false)}
+                >
+                    <div
+                        className="relative w-full max-w-4xl bg-slate-900 rounded-2xl overflow-hidden shadow-2xl"
+                        onClick={(e) => e.stopPropagation()}
+                    >
                         <button
                             onClick={() => setShowDemo(false)}
-                            className="absolute top-4 right-4 z-10 p-2 bg-slate-800 hover:bg-slate-700 rounded-full text-white transition-colors"
+                            className="absolute top-4 right-4 z-20 p-2 bg-slate-800 hover:bg-slate-700 rounded-full text-white transition-colors"
                         >
                             <svg
                                 className="w-6 h-6"
@@ -141,7 +147,6 @@ export default function Home() {
                         </button>
                         <video
                             className="w-full aspect-video"
-                            controls
                             autoPlay
                             src="/demo.mp4"
                         >
