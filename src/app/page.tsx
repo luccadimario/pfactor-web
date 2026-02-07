@@ -148,6 +148,7 @@ export default function Home() {
                         <video
                             className="w-full aspect-video"
                             autoPlay
+                            muted
                             src="/demo.mp4"
                         >
                             Your browser does not support the video tag.
