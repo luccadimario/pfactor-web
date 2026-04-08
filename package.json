@@ -6,12 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "remotion:preview": "remotion studio remotion/index.ts",
+    "remotion:render": "remotion render remotion/index.ts PFactorDemo out/demo.mp4",
+    "remotion:render-vertical": "remotion render remotion/index.ts AppShowcase out/showcase.mp4"
   },
   "dependencies": {
+    "@remotion/bundler": "^4.0.417",
+    "@remotion/cli": "^4.0.417",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "remotion": "^4.0.417"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
