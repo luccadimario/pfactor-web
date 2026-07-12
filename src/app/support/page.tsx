@@ -54,7 +54,7 @@ export default function Support() {
 
                             <div>
                                 <h3 className="font-semibold text-white mb-1">How do I delete my account and data?</h3>
-                                <p className="text-slate-400">Email us at support@pfactor.app from the address associated with your account and we&apos;ll delete your account and all associated data. See our <a href="/privacy" className="text-sky-400 hover:text-sky-300">Privacy Policy</a> for details.</p>
+                                <p className="text-slate-400">Email us at <a href="mailto:support@pfactor.app" className="text-sky-400 hover:text-sky-300">support@pfactor.app</a> from the address associated with your account and we&apos;ll delete your account and all associated data. See our <a href="/privacy" className="text-sky-400 hover:text-sky-300">Privacy Policy</a> for details.</p>
                             </div>
 
                             <div>
