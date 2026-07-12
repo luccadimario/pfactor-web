@@ -591,6 +591,12 @@ export default function Home() {
                             </span>
                         </div>
                     </div>
+                    <div className="flex items-center gap-6 text-sm">
+                        <a href="/support" className="text-slate-400 hover:text-white transition-colors">Support</a>
+                        <a href="/privacy" className="text-slate-400 hover:text-white transition-colors">Privacy</a>
+                        <a href="/terms" className="text-slate-400 hover:text-white transition-colors">Terms</a>
+                        <a href="mailto:support@pfactor.app" className="text-slate-400 hover:text-white transition-colors">support@pfactor.app</a>
+                    </div>
                     <p className="text-slate-500 text-sm">
                         &copy; 2025 pfactor. All rights reserved.
                     </p>
